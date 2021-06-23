@@ -25,6 +25,9 @@ def players_totals():
     for n in player:
         player_total += n
         print(f"The player's total is {player_total}. ")
+    for o in dealer:
+        dealer_total += o
+        print(f"The player's total is {dealer_total}. ")
 
 #def who_wins():
     #
