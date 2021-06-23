@@ -14,6 +14,8 @@ def deal():
     print(f"The dealer's hand is {dealer}.")
     print(f"The player's hand is {player}.")
 
+game_over = False
+
 # def choice():
 #     decision = input("Whould you like to hit or stand? ")
 #     if decision == "hit":
@@ -21,7 +23,7 @@ def deal():
 #     else:
 #         who_wins()
 
-ready = input("When you are ready to start, type deal and then press enter/return. ")
+ready = input("When you are ready to start, type deal and then press enter/return. \n")
 
 if ready == "deal":
     deal()
@@ -30,18 +32,18 @@ else:
 
 
 while game_over != True:
-    choice = input("Would you like to hit or stay? /n")
+    choice = input("Would you like to hit or stay? \n")
     if choice == "hit":
         player.append(random.choice(cards))
-        if sum(player) >= 222
-            print("Sorry, you are over 21 and you loose.")
+        if sum(player) >= 22:
+            print(f"{player} Sorry, you are over 21 and you loose.")
             game_over = True
-        else:
+        elif choice == "stay":
            print(player)
-    elif dealer <= 16:
+    elif sum(dealer) <= 16:
         dealer.append(random.choice(cards))
-        if sum(dealer) >= 222
-            print("The dealer has gone over 21 and you win")
+        if sum(dealer) >= 22:
+            printf("{dealer} The dealer has gone over 21 and you win")
             game_over = True
         else:
             print(dealer)
