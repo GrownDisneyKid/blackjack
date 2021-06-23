@@ -2,7 +2,8 @@
 import random
 dealer = []
 player = []
-
+dealer_total = 0
+player_total = 0
 cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11]
 
 def deal():
