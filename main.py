@@ -4,7 +4,7 @@ dealer = []
 player = []
 dealer_total = 0
 player_total = 0
-cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11]
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 ]
 
 def deal():
     dealer.append(random.choice(cards))
@@ -14,21 +14,47 @@ def deal():
     print(f"The dealer's hand is {dealer}.")
     print(f"The player's hand is {player}.")
 
-def choice():
-    decision = input("Whould you like to hit or stand? ")
-    if decision == "hit":
+# def choice():
+#     decision = input("Whould you like to hit or stand? ")
+#     if decision == "hit":
+#         player.append(random.choice(cards))
+#     else:
+#         who_wins()
+
+ready = input("When you are ready to start, type deal and then press enter/return. ")
+
+if ready == "deal":
+    deal()
+else:
+    print("Sorry you're response was not recognized")
+
+
+while game_over != True:
+    choice = input("Would you like to hit or stay? /n")
+    if choice == "hit":
         player.append(random.choice(cards))
+        if sum(player) >= 222
+            print("Sorry, you are over 21 and you loose.")
+            game_over = True
+        else:
+           print(player)
+    elif dealer <= 16:
+        dealer.append(random.choice(cards))
+        if sum(dealer) >= 222
+            print("The dealer has gone over 21 and you win")
+            game_over = True
+        else:
+            print(dealer)
     else:
         who_wins()
 
-
-def players_totals():
-    for n in player:
-        player_total += n
-        print(f"The player's total is {player_total}. ")
-    for o in dealer:
-        dealer_total += o
-        print(f"The player's total is {dealer_total}. ")
+# def players_totals():
+#     for n in player:
+#         player_total = sum(player)
+#     for o in dealer:
+#         dealer_total = sum(dealer)
+#     print(f"The player's total is {player_total}. ")
+#     print(f"The player's total is {dealer_total}. ")
 
 #def who_wins():
     #
@@ -39,21 +65,15 @@ def players_totals():
 
 
 # ask play if they are ready to deal cards
-ready = input("When you are ready to start, type start and then press enter/return" )
 
-if ready == "start":
-    deal()
-else:
-    print("Sorry you're response was not recognized")
 
 
 # issues two random cards to each player
 
-deal()
+
 
 # evaluate totals and if players are over 21
 
-players_totals()
 
 # combine dealer and player lists for total
 #evaluate to see if either is over 21
