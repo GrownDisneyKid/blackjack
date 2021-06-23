@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="198c97e8-8911-4bc3-934f-71e91bf2c344" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/blackjack.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blackjack.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="198c97e8-8911-4bc3-934f-71e91bf2c344" name="Default Changelist" comment="Need to solve line 77 syntax error 202106231816" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,6 +92,45 @@
       <option name="presentableId" value="Default" />
       <updated>1624406152237</updated>
     </task>
+    <task id="LOCAL-00001" summary="Game refined through who_wins() function">
+      <created>1624483670328</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1624483670328</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Major fixes to core game function. 202106231736">
+      <created>1624484220587</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1624484220587</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Need to solve line 77 syntax error 202106231816">
+      <created>1624486599810</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1624486599810</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Game refined through who_wins() function" />
+    <MESSAGE value="Major fixes to core game function. 202106231736" />
+    <MESSAGE value="Need to solve line 77 syntax error 202106231816" />
+    <option name="LAST_COMMIT_MESSAGE" value="Need to solve line 77 syntax error 202106231816" />
   </component>
 </project>
