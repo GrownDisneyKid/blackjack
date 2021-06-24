@@ -5,7 +5,7 @@ player = []
 dealer_total = 0
 player_total = 0
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 ]
-
+#what's going on with L77?
 
 def game_start():
     ready = input("When you are ready to start, type deal and then press enter/return. \n")
