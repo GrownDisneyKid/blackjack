@@ -74,7 +74,7 @@ while game_over == False:
             play_again()
         elif sum(player) <=21:
             print(f"Your hand is now {player} "
-    elif sum(dealer) <= 15:
+    elif sum(dealer) <= 15:  """What's going on here?'"""
         dealer.append(random.choice(cards))
         if sum(dealer) >= 22:
             print(f"{dealer} The dealer has gone over 21 and you win")
