@@ -147,3 +147,5 @@ if again == "yes":
     deal()
 else:
     print("Thanks for playing.")
+
+""""Finish program"""
