@@ -1,89 +1,149 @@
-#FUNCTIONS AND VARIABLES NEEDED TO SUPPORT GAME
-import random
-dealer = []
-player = []
-dealer_total = 0
-player_total = 0
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10 ]
-#what's going on with L77?
+############### Blackjack Project #####################
 
-def game_start():
-    ready = input("When you are ready to start, type deal and then press enter/return. \n")
-    if ready == "deal":
-        deal()
-    else:
-        print("Sorry you're response was not recognized")
+#Difficulty Normal 😎: Use all Hints below to complete the project.
+#Difficulty Hard 🤔: Use only Hints 1, 2, 3 to complete the project.
+#Difficulty Extra Hard 😭: Only use Hints 1 & 2 to complete the project.
+#Difficulty Expert 🤯: Only use Hint 1 to complete the project.
+
+############### Our Blackjack House Rules #####################
+
+## The deck is unlimited in size.
+## There are no jokers.
+## The Jack/Queen/King all count as 10.
+## The the Ace can count as 11 or 1.
+## Use the following list as the deck of cards:
+## cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+## The cards in the list have equal probability of being drawn.
+## Cards are not removed from the deck as they are drawn.
+## The computer is the dealer.
+
+##################### Hints #####################
+
+#Hint 1: Go to this website and try out the Blackjack game:
+#   https://games.washingtonpost.com/games/blackjack/
+#Then try out the completed Blackjack project here:
+#   http://blackjack-final.appbrewery.repl.run
+
+#Hint 2: Read this breakdown of program requirements:
+#   http://listmoz.com/view/6h34DJpvJBFVRlZfJvxF
+#Then try to create your own flowchart for the program.
+
+#Hint 3: Download and read this flow chart I've created:
+#   https://drive.google.com/uc?export=download&id=1rDkiHCrhaf9eX7u7yjM1qwSuyEk-rPnt
+
+#Hint 4: Create a deal_card() function that uses the List below to *return* a random card.
+#11 is the Ace.
+#cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+#Hint 5: Deal the user and computer 2 cards each using deal_card() and append().
+#user_cards = []
+#computer_cards = []
+
+#Hint 6: Create a function called calculate_score() that takes a List of cards as input
+#and returns the score.
+#Look up the sum() function to help you do this.
+
+#Hint 7: Inside calculate_score() check for a blackjack (a hand with only 2 cards: ace + 10) and return 0 instead of the actual score. 0 will represent a blackjack in our game.
+
+#Hint 8: Inside calculate_score() check for an 11 (ace). If the score is already over 21, remove the 11 and replace it with a 1. You might need to look up append() and remove().
+
+#Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0) or if the user's score is over 21, then the game ends.
+
+#Hint 10: If the game has not ended, ask the user if they want to draw another card. If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
+
+#Hint 11: The score will need to be rechecked with every new card drawn and the checks in Hint 9 need to be repeated until the game ends.
+
+#Hint 12: Once the user is done, it's time to let the computer play. The computer should keep drawing cards as long as it has a score less than 17.
+
+#Hint 13: Create a function called compare() and pass in the user_score and computer_score. If the computer and user both have the same score, then it's a draw. If the computer has a blackjack (0), then the user loses. If the user has a blackjack (0), then the user wins. If the user_score is over 21, then the user loses. If the computer_score is over 21, then the computer loses. If none of the above, then the player with the highest score wins.
+
+#Hint 14: Ask the user if they want to restart the game. If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
+
+import random
+
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+player = []
+dealer = []
+game_players = []
+
+done = False
 
 def deal():
-    dealer.append(random.choice(cards))
+    player.append(random.choice(cards))
     player.append(random.choice(cards))
     dealer.append(random.choice(cards))
-    player.append(random.choice(cards))
-    print(f"The dealer's hand is {dealer}.")
-    print(f"The player's hand is {player}.")
-    if sum(dealer) == 21 and sum(player) == 21:
-        print("The game is a draw!")
-        play_again()
-    elif sum(dealer) == 21 and sum(player) != 21:
-        print("The dealer has 21 and wins the game. ")
-        play_again()
-    elif sum(dealer) != 21 and sum(player) == 21:
-        print("You have 21 and win the game. ")
-        play_again()
+    dealer.append(random.choice(cards))
+    print(f"Your have {player} in your hand.")
+    print(f"The dealer has {dealer[0]} and X in their hand")
+    score()
 
-def who_wins():
-    player_total == sum(player)
-    dealer_total == sum(dealer)
-    if player_total > dealer_total:
-        print("You had the higher hand.  You win the game")
-        play_again()
-    elif player_total < dealer_total:
-        print("The dealer has the higher hand.  You loose the game")
-        play_again()
-    elif player_total == dealer_total:
-        print("The game is a draw!")
-        play_again()
-
-def play_again():
-    dealer = []
-    player = []
-    dealer_total = 0
-    player_total = 0
-    game_again = input("Would you like to play again")
-    if game_again == yes:
-        deal()
+def score():
+    dealer_total = sum(dealer)
+    player_total = sum(player)
+    #print(player_total)
+    #print(dealer_total)
+    #print(player)
+    #print(dealer)
+    if dealer_total == 21:
+        print("The dealer has blackjack, you loose this round.")
+    elif player_total == 21:
+        print("You have blackjack, you won this round!")
     else:
-        print("Thank you for playing.  I hope you enjoyed the game.")
+        chose_path()
 
 
-game_over = False
-
-game_again = ""
-
-
-
-
-game_start()
-
-while game_over == False:
-    choice = input("Would you like to hit or stay? \n")
+def chose_path():
+    choice = input("Do you want to hit or stand? ")
     if choice == "hit":
         player.append(random.choice(cards))
         if sum(player) >= 22:
-            print(f"{player} Sorry, you are over 21 and you loose.")
-            play_again()
-        elif sum(player) <=21:
-            print(f"Your hand is now {player} "
-    elif sum(dealer) <= 15:  """What's going on here?'"""
-        dealer.append(random.choice(cards))
-        if sum(dealer) >= 22:
-            print(f"{dealer} The dealer has gone over 21 and you win")
-            play_again()
+            if 11 in player:
+                player.remove(11)
+                player.append(1)
+                score()
+            print(f"You have busted with {player}, you loose this round. ")
+        elif sum(player) <= 20:
+            print(player)
+            chose_path()
+    if choice == "stay":
+        #done == True
+        if sum(dealer) <= 16:
+            dealer.append(random.choice(cards))
+            if sum(dealer) >= 22:
+                print(f"The dealer bust with {dealer}, you win this round")
+            elif sum(dealer) == 21:
+                print(f"The dealer has backjack {dealer}, you loose this round.")
         else:
-            print(dealer)
-            who_wins()
-    else:
-        who_wins()
+            final_score()
+
+def final_score():
+    dealer_total = sum(dealer)
+    player_total = sum(player)
+    if player_total == dealer_total:
+        print(f"The game is a draw with the Player {player} hand and the dealer {dealer} hand")
+    elif dealer_total > player_total:
+        print(f"The dealer has the higher score.  Your hand is {player} and the dealer's hand is {dealer}. ")
+    elif dealer_total < player_total:
+        print(f"You have the higher score.  Your hand is {player} and the dealer's hand is {dealer}. ")
 
 
 
+
+
+
+
+
+
+
+
+deal()
+
+again = input("Would you like to play again?")
+
+if again == "yes":
+    player = []
+    dealer = []
+    deal()
+else:
+    print("Thanks for playing.")
